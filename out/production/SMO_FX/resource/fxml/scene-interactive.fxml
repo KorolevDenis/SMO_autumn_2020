@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.SceneInteractiveController">
+
+    <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+            <Button mnemonicParsing="false" onAction="#handleOnActionStepModButton" text="Step mod" />
+            <Button mnemonicParsing="false" onAction="#handleOnActionClose" text="Close" />
+        </buttons>
+        <BorderPane.margin>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+        </BorderPane.margin>
+    </ButtonBar>
+    <GridPane layoutX="29.0" layoutY="49.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <children>
+            <Label fx:id="bufferSizeLabel" text="Buffer size" GridPane.rowIndex="2" />
+            <Label fx:id="lambdaLabel" text="Lambda" GridPane.rowIndex="3" />
+            <Label fx:id="alphaLabel" text="Alpha" GridPane.rowIndex="4" />
+            <Label fx:id="betaLabel" text="Beta" GridPane.rowIndex="5" />
+            <TextField fx:id="bufferSizeTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="lambdaTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="alphaTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="betaTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="handleCountLabel" text="Handle count" GridPane.rowIndex="1" />
+            <Label fx:id="sourceCountLabel" text="Source count" />
+            <TextField fx:id="handleCountTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="sourceCountTextField" GridPane.columnIndex="1" />
+        </children>
+    </GridPane>
+    <Button id="ResetButton" layoutX="29.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleOnStartButton" text="Start/Restart" />
+   <TableView fx:id="sourcesResultsTable" layoutX="24.0" layoutY="270.0" prefHeight="180.0" prefWidth="602.0">
+     <columns>
+       <TableColumn fx:id="sourceNumberColumn" prefWidth="85.0" text="№ источника" />
+       <TableColumn fx:id="sourceCountColumn" prefWidth="72.0" text="кол. заявок" />
+       <TableColumn fx:id="denyProbabilityColumn" prefWidth="74.0" text="вер. отказа" />
+       <TableColumn fx:id="systemTimeColumn" prefWidth="69.0" text="Tпреб" />
+       <TableColumn fx:id="processTimeColumn" prefWidth="75.0" text="Tобсл" />
+       <TableColumn fx:id="bufferTimeColumn" prefWidth="75.0" text="Tбп" />
+       <TableColumn fx:id="dispProcessTimeColumn" prefWidth="75.0" text="дисп. Tобсл" />
+       <TableColumn fx:id="dispBufferTTimeColumn" prefWidth="75.0" text="дисп. Tбп" />
+     </columns>
+   </TableView>
+
+    <TableView fx:id="handlesResultsTable" layoutX="259.0" layoutY="15.0" prefHeight="203.0" prefWidth="200.0">
+        <columns>
+            <TableColumn fx:id="handleNumberColumn" prefWidth="75.0" text="№ прибора" />
+            <TableColumn fx:id="coefficientColumn" prefWidth="124.0" text="коэфф. использования" />
+        </columns>
+    </TableView>
+   <Button id="nextButton" layoutX="129.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleOnNextButton" text="Next" />
+   <TextField fx:id="requestCountTextField" layoutX="200.0" layoutY="232.0" promptText="Request count" />
+
+</AnchorPane>
